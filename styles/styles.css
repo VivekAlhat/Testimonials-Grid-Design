@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: var(--light-gray);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  grid-template-areas: "one one two five" "three four four five";
+  gap: 1.5rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+article > h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.article__1 {
+  background: var(--moderate-violet);
+  grid-area: one;
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.article__1 > p {
+  color: var(--white);
+  opacity: 70%;
+}
+
+.user__info > p {
+  color: var(--white);
+  opacity: 70%;
+}
+
+#pattern {
+  position: absolute;
+  top: 0;
+  right: 10rem;
+  z-index: -1;
+  opacity: 50%;
+}
+
+.article__2 {
+  grid-area: two;
+  background: var(--very-dark-grayish-blue);
+  color: var(--white);
+}
+
+.article__3 {
+  grid-area: three;
+  background: var(--white);
+}
+
+.article__4 {
+  grid-area: four;
+  background: var(--very-dark-blackish-blue);
+  color: var(--white);
+}
+
+.article__5 {
+  grid-area: five;
+  background: var(--white);
+  color: var(--very-dark-blackish-blue);
+}
+
+.user__avatar {
+  border-radius: 300px;
+}
+
+.user__details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial {
+  line-height: 1.5rem;
+}
+
+.article__5 > .user__details > .user__info > p,
+.article__3 > .user__details > .user__info > p {
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 1rem;
+    grid-template-areas: "one" "two" "three" "four" "five";
+  }
+
+  #pattern {
+    right: 3rem;
+  }
+}
